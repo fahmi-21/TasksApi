@@ -13,7 +13,7 @@ public class TasksController : ControllerBase
         _taskService = taskService;
     }
 
-    [HttpPost]
+    [HttpPost("Create")]
     public async Task<IActionResult> Create( CreatTaskRequest  request)
     {
         var result = await _taskService.CreateAsync(request);
@@ -21,17 +21,15 @@ public class TasksController : ControllerBase
         return Ok(result);
     }
 
-    [HttpGet]
-    public async Task<IActionResult> GetAll(
-        [FromQuery] int page = 1,
-        [FromQuery] int pageSize = 5)
+    [HttpGet("GetAll")]
+    public async Task<IActionResult> GetAll(int page = 1, int pageSize = 5)
     {
         var result = await _taskService.GetAllAsync(page, pageSize);
 
         return Ok(result);
     }
 
-    [HttpGet("{id:int}")]
+    [HttpGet("GetById/{id:int}")]
     public async Task<IActionResult> GetById(int id)
     {
         var result = await _taskService.GetByIdAsync(id);
@@ -45,7 +43,7 @@ public class TasksController : ControllerBase
         return Ok(result);
     }
 
-    [HttpPut("{id:int}")]
+    [HttpPut("Update/{id:int}")]
     public async Task<IActionResult> Update(
         int id,
         UpdateTaskRequest request)
@@ -61,7 +59,7 @@ public class TasksController : ControllerBase
         return Ok(result);
     }
 
-    [HttpDelete("{id:int}")]
+    [HttpDelete("Delete/{id:int}")]
     public async Task<IActionResult> Delete(int id)
     {
         var result = await _taskService.DeleteAsync(id);

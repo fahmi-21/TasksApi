@@ -3,7 +3,7 @@ using Tasks_Api.DTOs.Responses;
 
 namespace Tasks_Api.Services
 {
-    public class TaskService
+    public class TaskService : ITaskServcie
     {
         private readonly IRepository<Tasks_Api.Model.Task> _repository;
 
@@ -37,8 +37,8 @@ namespace Tasks_Api.Services
 
             int totalCount = query.Count();
             int curentpage = page;
-            double totalPages = Math.Ceiling((double)totalCount / 5.0);
-            var tasks = query.Skip((curentpage - 1) * 5)
+            double totalPages = Math.Ceiling((double)totalCount / pageSize);
+            var tasks = query.Skip((curentpage - 1) * pageSize)
                              .Take(pageSize)
                              .ToList();
     

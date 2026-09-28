@@ -2,9 +2,11 @@
 
 namespace Tasks_Api.Services.IService
 {
+    using Tasks_Api.DTOs.Responses;
+
     public interface ITaskServcie
     {
-        Task<(List<Tasks_Api.Model.Task> Tasks, int TotalCount)> GetAllAsync( int page, int pageSize);
+        Task<TaskResponse> GetAllAsync(int page, int pageSize);
 
         Task<Tasks_Api.Model.Task?> GetByIdAsync(int id);
 

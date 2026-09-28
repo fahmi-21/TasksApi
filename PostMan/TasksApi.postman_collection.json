@@ -1,0 +1,136 @@
+{
+  "info": {
+    "_postman_id": "40e05b5d-1255-4b94-ba7c-b0401998132c",
+    "name": "TasksApi",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54654702",
+    "_collection_link": "https://go.postman.co/collection/54654702-40e05b5d-1255-4b94-ba7c-b0401998132c?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"Learn ASP.NET Core\",\r\n  \"description\": \"Study REST API and Entity Framework Core\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5107/api/Tasks/Create",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5107",
+          "path": [
+            "api",
+            "Tasks",
+            "Create"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetAll",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5107/api/Tasks/GetAll",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5107",
+          "path": [
+            "api",
+            "Tasks",
+            "GetAll"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetById",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5107/api/Tasks/GetById",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5107",
+          "path": [
+            "api",
+            "Tasks",
+            "GetById"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"Learn ASP.NET Core Web API\",\r\n    \"description\": \"Study REST API, EF Core and FluentValidation\",\r\n    \"isCompleted\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5107/api/Tasks/Update/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5107",
+          "path": [
+            "api",
+            "Tasks",
+            "Update",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5107/api/Tasks/Delete/2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5107",
+          "path": [
+            "api",
+            "Tasks",
+            "Delete",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
