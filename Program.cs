@@ -1,9 +1,16 @@
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.Extensions.Options;
 using Tasks_Api.Services;
+using Tasks_Api.Validations;
+using Tasks_Api.Validators;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddValidatorsFromAssemblyContaining<CreatTaskValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<UpdateTaskValidator>();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
                     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
